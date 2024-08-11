@@ -6,6 +6,13 @@ ENV PYTHONUNBUFFERED 1
 
 COPY requirements.txt .
 # install python dependencies
+
+#Prueba By Emanuell Gelves
+RUN apt-get update && apt-get install -y \
+    sqlite3 \
+    libsqlite3-dev \
+    && rm -rf /var/lib/apt/lists/*
+    
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
